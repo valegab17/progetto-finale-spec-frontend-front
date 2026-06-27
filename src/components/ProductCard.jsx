@@ -1,0 +1,1 @@
+//Deve mostrare il titolo, la categoria, la categoryImg e il prezzo
