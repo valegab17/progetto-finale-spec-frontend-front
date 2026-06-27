@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getProducts } from "../services/api";
 
 
-export function useProduct() {
+export function useProducts() {
     const [products, setProducts] = useState([]);
     useEffect(() => {
         const loadData = async () => {
