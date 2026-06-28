@@ -1,0 +1,11 @@
+export default function SortSelector({onSort}){
+    return(
+        <>
+        <select onChange={(e => onSort(e.target.value))}>
+            <option value="title-asc"> A - Z</option>
+            <option value="title-desc"> Z - A</option>
+          
+        </select>
+        </>
+    )
+}

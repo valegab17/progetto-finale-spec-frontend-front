@@ -1,5 +1,11 @@
+import { Link } from "react-router-dom";
+
 export default function ProductCard({ product }) {
     return (
+        <Link to={`/prodotto/${product.id}`}>
+        
+        
+        
         <div className="product-card">
             {/* Wrapper per allineare icona piccola e titolo */}
             <div className="product-title-wrapper">
@@ -13,5 +19,7 @@ export default function ProductCard({ product }) {
             
             <p>Prezzo: {product.price}€</p>
         </div>
+    
+        </Link>
     );
 }

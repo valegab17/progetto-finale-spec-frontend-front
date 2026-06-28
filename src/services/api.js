@@ -15,3 +15,21 @@ export async function getProducts(){
     
   }
 }
+
+
+export async function getProductsById(id){
+  try{
+    const res = await fetch(`${API_URL}/products/${id}`)
+
+    //se la risposta non è OK allora lancio l'errore
+    if(!res.ok){
+      throw new Error("Errore nel recupero dati ")
+    }
+    return await res.json();
+
+  } catch(err){
+    console.error("Qualcosa è andato storto nella risposta del fetch ID", err);
+    return null;
+    
+  }
+}

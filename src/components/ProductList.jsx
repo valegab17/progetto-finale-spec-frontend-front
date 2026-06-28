@@ -1,4 +1,4 @@
-import ProductCard from "./ProductCard"; // Importa il componente che abbiamo appena sistemato
+import ProductCard from "./ProductCard";
 
 export function ProductList({ products }) {
 
