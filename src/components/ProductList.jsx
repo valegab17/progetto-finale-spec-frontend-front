@@ -1,6 +1,6 @@
 import ProductCard from "./ProductCard";
 
-export function ProductList({ products }) {
+export default function ProductList({ products }) {
 
 
 
@@ -8,7 +8,7 @@ export function ProductList({ products }) {
     <div className="product-list">
       {products.map((p) => (
        
-        <ProductCard key={p.title} product={p} />
+        <ProductCard key={p.id} product={p} />
       ))}
     </div>
   );

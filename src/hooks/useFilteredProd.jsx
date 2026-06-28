@@ -2,29 +2,37 @@ import { useState } from "react";
 
 export default function useFilteredProd(products, categoryName) {
     const [searchTerm, setSearchTerm] = useState("");
-    const [dangerFilter, setDangerFilter] = useState("Tutti");
-    const [sortOrder, setSortOrder] = useState("title-asc")
+    const [sortOrder, setSortOrder] = useState("title-asc");
 
-    //gestisco la logica del filtro 
     const filteredProducts = products
-        .filter(p => p.category.toLowerCase() === categoryName.toLowerCase())
-        .filter(p => p.title.toLowerCase().includes(searchTerm.toLowerCase()))
+        // filtro categoria da URL
         .filter(p => {
-            if (dangerFilter === "Tutti") return true;
+            if (!categoryName || categoryName === "Tutte") return true;
 
-            return p.dangerLevel.toLowerCase().includes(dangerFilter.toLowerCase());
+            return p.category.toLowerCase() === categoryName.toLowerCase();
         })
+
+        // ricerca
+        .filter(p =>
+            p.title.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+
+        // ordinamento
         .sort((a, b) => {
             if (sortOrder === "title-asc") {
-                return a.title.localeCompare(b.title)
+                return a.title.localeCompare(b.title);
             }
 
-            else if (sortOrder === "title-desc") {
-            return b.title.localeCompare(a.title)
-            } else {
-                return 0
+            if (sortOrder === "title-desc") {
+                return b.title.localeCompare(a.title);
             }
-        })
 
-    return { filteredProducts, setSearchTerm, setDangerFilter, setSortOrder }
+            return 0;
+        });
+
+    return {
+        filteredProducts,
+        setSearchTerm,
+        setSortOrder
+    };
 }

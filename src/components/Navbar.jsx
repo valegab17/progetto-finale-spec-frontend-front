@@ -3,7 +3,10 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
     return (
         <>
-            <nav><NavLink to="/"> 🡨</NavLink></nav>
+            <nav className="upper-nav"><NavLink to="/"> 🡨</NavLink>
+            <NavLink to="/favorites" >wishlist</NavLink>
+            </nav>
+
             <nav className="nav-menu-bottom">
                 <NavLink to="/categoria/pozioni"><img src="/imgs/category/cat_pozioni.png" alt="pozioni" /></NavLink>
                 <NavLink to="/categoria/divinazione"><img src="/imgs/category/divinazione.png" alt="divinazione" /></NavLink>

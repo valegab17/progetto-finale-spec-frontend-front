@@ -1,25 +1,31 @@
-/*  Logica: Filtra l'array products tenendo solo gli elementi dove p.category === categoryName.  */
-
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 import { useProducts } from "../hooks/useProducts";
-import { ProductList } from "../components/ProductList";
-import  useFilteredProd  from "../hooks/useFilteredProd";
+import useFilteredProd from "../hooks/useFilteredProd";
+
+import ProductList from "../components/ProductList";
 import SearchBar from "../components/SearchBar";
-import DangerFilter from "../components/DangerFilter";
 import SortSelector from "../components/SortSelector";
+import CategorySelector from "../components/CategorySelector";
+
 export default function CategoryPage() {
-    let { categoryName } = useParams();
+    const { categoryName } = useParams();
     const { products } = useProducts();
-    const { filteredProducts, setSearchTerm, setDangerFilter, setSortOrder }
-        = useFilteredProd(products, categoryName)
+
+    const {
+        filteredProducts,
+        setSearchTerm,
+        setSortOrder
+    } = useFilteredProd(products, categoryName);
 
     return (
         <>
+            <CategorySelector />
+
             <SearchBar onSearch={setSearchTerm} />
-            <DangerFilter onFilterChange={setDangerFilter} />
-            <SortSelector onSort = {setSortOrder} />
+
+            <SortSelector onSort={setSortOrder} />
+
             <ProductList products={filteredProducts} />
-        </>)
-
-
+        </>
+    );
 }
