@@ -17,4 +17,4 @@ export function useProduct(id) {
     }, [id]);
 
     return { product }; 
-}
+} 

@@ -29,21 +29,20 @@ export default function Modal() {
         <div className="m-overlay">
             <div className="m-content">
 
-                <h2>Cos'è meglio?</h2>
+                <h2>Comparatore</h2>
 
-                <div className="m-comparison-grid">  {/* ← aggiungi questo wrapper */}
+                <div className="m-comparison">  
                     {comparison.map((p) => (
                         <div key={p.id} className="m-item">
-                            <span>{p.title}</span>
+                            <span className="m-title">{p.title}</span>
                             <p>Prezzo: {p.price}€</p>
                             <img src={p.img} alt={p.title} />
-                            <button onClick={() => removeFromComparison(p.id)}>
+                            <button onClick={() => removeFromComparison(p.id)} className="m-remove">
                                 Rimuovi
                             </button>
                         </div>
                     ))}
                 </div>
-                {/* Tasto per svuotare tutto in un colpo solo */}
                 {comparison.length > 0 && (
                     <button onClick={clearAll} className="m-clear-btn">
                         Svuota tutto il Calderone

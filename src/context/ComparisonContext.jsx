@@ -23,10 +23,6 @@ export default function ComparisonProvider({ children }) {
             return;
         }
 
-        if (comparison.length >= 2) {
-            alert("Spiacente strega, hai riempito il calderone fino all'orlo. Rimuovi qualcosa!");
-            return;
-        }
 
         try {
             const response = await fetch(`http://localhost:3001/products/${product.id}`);

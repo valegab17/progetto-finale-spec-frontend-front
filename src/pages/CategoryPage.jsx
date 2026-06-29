@@ -19,8 +19,8 @@ export default function CategoryPage() {
 
     return (
         <>
-            <CategorySelector />
-
+{            <CategorySelector />
+}
             <SearchBar onSearch={setSearchTerm} />
 
             <SortSelector onSort={setSortOrder} />
