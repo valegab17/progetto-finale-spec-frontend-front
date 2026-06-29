@@ -1,34 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
 
-/* CSS RESET */
-*{
+/* RESET */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
-
-body{
+body {
   background-color: rgb(17, 6, 1);
+  font-family: 'Crimson Text', serif;
 }
 
-/* NAVBAR */
+/* NAVBAR CONTAINER */
 .nav-menu-bottom {
   display: flex;
-  flex-wrap: nowrap;  
-  justify-content: center; 
-  align-items: center;    
-  background-color: antiquewhite;
+  justify-content: center;
+  align-items: center;
+  background: rgba(252, 215, 141, 0.85); 
   position: fixed;
   bottom: 0;
-  left: 0;             
-  width: 100%;         
-  padding: 10px 0;    
-  gap: 20px;           
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  gap: 20px;
+  z-index: 1000;
 }
 
+.nav-menu-bottom a {
+  position: relative;
+  display: flex;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-menu-bottom a.active {
+  transform: translateY(-10px); 
+  background-size: cover;
+  background-position: center;
+}
+
+.nav-menu-bottom a::after {
+  content: '';
+  position: absolute;
+  left: 10%;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #5a4a35;
+  transition: width 0.3s ease;
+}
+
+.nav-menu-bottom a.active::after {
+  width: 80%;
+}
+
+/* IMMAGINI NAVBAR */
 .nav-menu-bottom img {
-  max-width: 140px;     
-  height: auto;        
+  max-width: 120px; 
+  height: auto;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+}
+
+.nav-menu-bottom img.incensi{
+  max-width: 100px;
+}
+
+/* HERO SECTION */
+.top-section{
+  max-width: 100%;
+  max-height: 60vh;
+  background-color: #d8b778;
+  
+  
+}
+
+.top-section img{
+  display: block;
+  width: 15%;
+   margin: 0 auto;
+
 }
