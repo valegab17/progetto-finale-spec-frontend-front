@@ -94,21 +94,23 @@ body {
   max-width: 100%;
 }
 
-.content-section h2{
-  color:inherit;
+.content-section h2 {
+  color: inherit;
   text-align: center;
   padding: 10px;
-   background-color: #d8b778;
-   margin-bottom: 20px;
+  background-color: #d8b778;
+  margin-bottom: 20px;
 }
 
-.content-section select, select, input{
+.content-section select,
+select,
+input {
   padding: 20px;
   background-color: #b17a33;
   border-radius: 15px;
   border-style: none;
   margin-right: 15px;
-font-size: 1rem;
+  font-size: 1rem;
 
 }
 
@@ -148,9 +150,9 @@ font-size: 1rem;
 }
 
 .product-icon-small {
-display: block;
+  display: block;
   margin: 0 auto;
-   margin-top: 50px;
+  margin-top: 50px;
   width: 250px;
   height: 250px;
   object-fit: contain;

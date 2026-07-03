@@ -7,7 +7,7 @@ export default function HomePage() {
     const { products } = useProducts();
 
     const featured = useMemo(() => {
-        if (!products?.length) return [];
+        if (!products.length) return [];
 
         return [...products]
             .sort(() => Math.random() - 0.5)
