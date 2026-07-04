@@ -1,6 +1,6 @@
 import { createContext, useState, useContext } from "react";
-
-const ComparisonContext = createContext();
+import { API_URL } from "../services/api";
+const ComparisonContext = createContext(null);
 
 export default function ComparisonProvider({ children }) {
     const [comparison, setComparison] = useState([]);
@@ -25,7 +25,7 @@ export default function ComparisonProvider({ children }) {
 
 
         try {
-            const response = await fetch(`http://localhost:3001/products/${product.id}`);
+            const response = await fetch(`${API_URL}/products/${product.id}`);
             const data = await response.json();
 
             if (data.success && data.product) {
@@ -62,5 +62,9 @@ export default function ComparisonProvider({ children }) {
 }
 
 export function useComparison() {
-    return useContext(ComparisonContext);
+    const context = useContext(ComparisonContext)
+    if(!context){
+        throw new Error("Questo hook può essere usato solo all'interno del ComparisonContext")
+    }
+    return context;
 }

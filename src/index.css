@@ -158,7 +158,6 @@ input {
   object-fit: contain;
 }
 
-/* Pulsanti posizionati in alto */
 .favorite-btn-category,
 .compare-btn {
   position: absolute;
@@ -204,6 +203,8 @@ input {
   width: 90%;
   max-width: 500px;
   text-align: center;
+  position: relative;
+
 }
 
 .m-comparison {
@@ -237,6 +238,20 @@ input {
   border-radius: 15px;
   border-style: none;
   font-size: 1rem;
+}
+
+.m-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 8px 14px;
+  border-style: none;
+  background-color: #110601;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .m-title {

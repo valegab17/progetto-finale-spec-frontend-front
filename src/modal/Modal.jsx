@@ -30,6 +30,7 @@ export default function Modal() {
             <div className="m-content">
 
                 <h2>Comparatore</h2>
+                    <button onClick={closeModal} className="m-close-btn"> X </button>
 
                 <div className="m-comparison">  
                     {comparison.map((p) => (
