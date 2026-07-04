@@ -13,17 +13,19 @@ export default function CategoryPage() {
 
     const {
         filteredProducts,
+        searchTerm,
         setSearchTerm,
+        sortOrder,
         setSortOrder
     } = useFilteredProd(products, categoryName);
 
     return (
         <>
-{            <CategorySelector />
-}
-            <SearchBar onSearch={setSearchTerm} />
+            {<CategorySelector />
+            }
+            <SearchBar searchValue={searchTerm} onSearch={setSearchTerm} />
 
-            <SortSelector onSort={setSortOrder} />
+            <SortSelector sortValue={sortOrder} onSort={setSortOrder} />
 
             <ProductList products={filteredProducts} />
         </>
