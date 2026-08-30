@@ -6,7 +6,7 @@ import { useProduct } from "../hooks/useProductById"; // Hook corretto
 export default function ProductCard({ product }) {
     const { addToFavorites, removeFromFavorites, isInFavorites } = useFavorites();
     const { addToComparison } = useComparison();
-    
+
     // Recuperiamo il dettaglio completo per avere accesso a .img
     // Usiamo l'ID del prodotto passato come prop
     const { product: fullProduct } = useProduct(product.id);
@@ -37,7 +37,7 @@ export default function ProductCard({ product }) {
                 <button onClick={handleComparisonClick} className="compare-btn">
                     Confronta
                 </button>
-                
+
                 <div className="product-title-wrapper">
                     {fullProduct ? (
                         <img
@@ -48,7 +48,7 @@ export default function ProductCard({ product }) {
                     ) : (
                         <div className="loading-icon">Caricamento...</div>
                     )}
-                    
+
                     <h3 className="product-t">{product.title}</h3>
                 </div>
             </div>

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useComparison } from "../context/ComparisonContext";
 
 export default function Modal() {
@@ -11,27 +10,16 @@ export default function Modal() {
         openModal
     } = useComparison();
 
-    useEffect(() => {
-        if (comparison.length === 2) {
-            openModal();
-        }
-    }, [comparison.length, openModal]);
-
-    useEffect(() => {
-        if (comparison.length === 0 && isModalOpen) {
-            closeModal();
-        }
-    }, [comparison.length, isModalOpen, closeModal]);
-
     if (!isModalOpen) return null;
 
     return (
-        <div className="m-overlay">
-            <div className="m-content">
+        <div className="m-overlay" onClick={closeModal}>
+            <div className="m-content" onClick={(e) => e.stopPropagation()}>
+                <button onClick={closeModal} className="m-close-btn">✕</button>
 
                 <h2>Comparatore</h2>
 
-                <div className="m-comparison">  
+                <div className="m-comparison">
                     {comparison.map((p) => (
                         <div key={p.id} className="m-item">
                             <span className="m-title">{p.title}</span>

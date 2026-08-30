@@ -5,14 +5,7 @@ import { useMemo } from "react";
 
 export default function HomePage() {
     const { products } = useProducts();
-
-    const featured = useMemo(() => {
-        if (!products.length) return [];
-
-        return [...products]
-            .sort(() => Math.random() - 0.5)
-            .slice(0, 4);
-    }, [products]);
+    const featured = products.slice(0, 4);
 
     return (
         <main className="home-page">

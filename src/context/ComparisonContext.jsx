@@ -19,18 +19,27 @@ export default function ComparisonProvider({ children }) {
 
         const alreadyComparing = comparison.some((i) => i.id === product.id);
         if (alreadyComparing) {
-            alert("Questo oggetto è già nel tuo calderone!");
+            setIsModalOpen(true);
             return;
         }
 
+        if (comparison.length >= 2) {
+            alert("Puoi confrontare solo due oggetti alla volta. Rimuovi un elemento per aggiungerne uno nuovo.");
+            setIsModalOpen(true);
+            return;
+        }
 
         try {
             const response = await fetch(`http://localhost:3001/products/${product.id}`);
             const data = await response.json();
 
             if (data.success && data.product) {
-        
-                setComparison([...comparison, data.product]);
+                const updated = [...comparison, data.product];
+                setComparison(updated);
+
+                if (updated.length === 2) {
+                    setIsModalOpen(true);
+                }
             } else {
                 throw new Error("Dati prodotto non trovati");
             }
@@ -41,7 +50,12 @@ export default function ComparisonProvider({ children }) {
     };
 
     const removeFromComparison = (id) => {
-        setComparison((prev) => prev.filter((p) => p.id !== id));
+        const updated = comparison.filter((p) => p.id !== id);
+        setComparison(updated);
+
+        if (updated.length === 0) {
+            setIsModalOpen(false);
+        }
     };
 
     return (
