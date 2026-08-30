@@ -15,10 +15,9 @@ export default function Modal() {
     return (
         <div className="m-overlay" onClick={closeModal}>
             <div className="m-content" onClick={(e) => e.stopPropagation()}>
-                <button onClick={closeModal} className="m-close-btn">✕</button>
 
                 <h2>Comparatore</h2>
-                    <button onClick={closeModal} className="m-close-btn"> X </button>
+                <button onClick={closeModal} className="m-close-btn"> X </button>
 
                 <div className="m-comparison">
                     {comparison.map((p) => (

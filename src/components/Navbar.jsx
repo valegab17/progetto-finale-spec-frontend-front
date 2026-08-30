@@ -6,7 +6,7 @@ export default function Navbar() {
         <>
 
             <nav className="nav-menu-bottom">
-                <NavLink to="/"> 🡨</NavLink>
+                <NavLink to="/" style={{ fontSize: '2.5rem', fontWeight: 'bold', lineHeight: '1', color: '#482515', display: 'flex', alignItems: 'center' }}>&#8592;</NavLink>
                 <NavLink to="/categoria/pozioni"><img src="/imgs/category/cat_pozioni.png" alt="pozioni" /></NavLink>
                 <NavLink to="/categoria/divinazione"><img src="/imgs/category/divinazione.png" alt="divinazione" /></NavLink>
                 <NavLink to="/categoria/incensi"><img src="/imgs/category/incensi.png" alt="incensi" className="incensi" /></NavLink>
