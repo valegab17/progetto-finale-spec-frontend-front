@@ -48,6 +48,9 @@ export function FavoritesProvider({ children }) {
 }
 
 export function useFavorites() {
-    const context = useContext(FavoriteContext);
-    return context;
+const context = useContext(FavoriteContext);
+if (!context){
+    throw new Error("Attenzione, questo hook può essere utilizzato solo all'interno del suo contesto")
+}
+return context;
 }

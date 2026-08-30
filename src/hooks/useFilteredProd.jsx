@@ -1,8 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function useFilteredProd(products, categoryName) {
     const [searchTerm, setSearchTerm] = useState("");
     const [sortOrder, setSortOrder] = useState("title-asc");
+
+    useEffect(() =>{
+        setSearchTerm("")
+        setSortOrder("title-asc")
+
+    }, [categoryName])
 
     const filteredProducts = [... products]
         // filtro categoria da URL
@@ -35,7 +41,9 @@ export default function useFilteredProd(products, categoryName) {
 
     return {
         filteredProducts,
+        searchTerm,
         setSearchTerm,
+        sortOrder,
         setSortOrder
     };
 }

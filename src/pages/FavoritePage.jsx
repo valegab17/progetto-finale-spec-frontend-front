@@ -11,7 +11,7 @@ export default function FavoritePage() {
              {/* //gestisco lo stato vuoto */}
             {favorites.length === 0 ? (
                 <div className="empty-state">
-                    <p>A quanto pare il tuo grimorio è vuoto..</p>
+                    <p>A quanto pare il tuo calderone è vuoto..</p>
                     <p>Esplora l'emporio per iniziare la tua collezione! ✨</p>
                 </div>
             ) : (
