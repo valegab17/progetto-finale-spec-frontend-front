@@ -1,16 +1,14 @@
-# React + Vite
+# 🧙‍♀️ Il Calderone Della Strega
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+E-commerce Frontend sviluppato in React, con un'interfaccia fantasy ispirata ai videogiochi RPG e funzionalità per la gestione e il confronto dei prodotti.
+## 🚀 Funzionalità:
 
-Currently, two official plugins are available:
+   - **Catalogo**: ricerca, filtraggio per categoria e ordinamento alfabetico.
+   - **Preferiti & Comparatore**: gestione globale dello stato tramite Context API e persistenza con LocalStorage.
+   - **UI & Responsive**: componenti riutilizzabili, layout responsive e navbar in stile HUD ispirata a The Elder Scrolls V: Oblivion.
+   -**API**: integrazione con REST API tramite Custom Hooks.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tech Stack
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Frontend**: React, JavaScript, Context API, Custom Hooks, Bootstrap, HTML/CSS, LocalStorage
+**API**: REST API, Fetch
